@@ -2,10 +2,10 @@
   <div class="todo-app " :class="{ 'modal-body': openModal}">
     <h2>{{message}}</h2>
 
-    <div class="add-todo-item">
-      <input type="text" placeholder="Enter body" v-model="todoItem.body">
-      <button type="submit" class="add-item" @click="addTodo">Add Task</button>
-    </div>
+    <add-item @newTodo="addTodo($event)"/>
+
+    <todo-list :todoArr="todo" @removeTodo="removeTodo($event)"></todo-list>
+
 
     <div class="vue-todo-modal" :class="{ 'modal-close': !openModal}">
       <div class="custom-modal">
@@ -20,45 +20,43 @@
     </div>
 
 
-    <div class="to-do-list">
-      <div class="to-do-container" v-for="item in todo" :key="item.id">
-        <div class="to-do-item">
-          <p class="item-body"><strong> {{item.body}}</strong></p>
-          <div class="item-actions">
-            <button type="submit" class="btn edit" @click="editTodo(item.id)">Edit</button>
-            <button type="submit" class="btn remove" @click="removeTodo(item.id)">Remove</button>
-          </div>
-
-        </div>
-        <div class="todo-time">{{item.time}}</div>
-      </div>
-
-    </div>
 
   </div>
 </template>
 
 <script>
+  import AddItem from './components/addItem.vue';
+  import TodoList from './components/todoList.vue';
     export default {
+        components: {
+            AddItem,
+            TodoList,
+        },
         data () {
             return {
                 message: 'To Do App!',
                 openModal: false,
                 todo: [
-                    { id: 1, body: 'create react app', time: '2020.09.18'},
-                    { id: 2, body: 'learn vuejs', time: '2020.09.12'},
-                    { id: 3, body: 'finish divi builder extension with wordpress', time: '2020.09.11' },
-                    { id: 4, body: 'enjoy with family', time: '2020.11.18'},
+                    { id: 1, body: 'create react app', time: '13.8.2021'},
+                    { id: 2, body: 'learn vuejs', time: '15.8.2021'},
+                    { id: 3, body: 'finish divi builder extension with wordpress', time: '15.8.2021' },
+                    { id: 4, body: 'enjoy with family', time: '16.8.2021'},
                 ],
                 todoItem: {id: '', body:''},
                 editItem: {id: '', body: '', time: ''}
             }
         },
         methods: {
-            addTodo() {
+            addTodo(value) {
+                var date = new Date();
+                var day = date.getDate();
+                var year = date.getFullYear();
+                var month = date.getMonth();
+
                 const newItem = {
                     id: Date.now(),
-                    body: this.todoItem.body
+                    body: value,
+                    time: day + '.' + month + '.' + year
                 }
                 this.todo.push(newItem);
                 this.todoItem.body='';
@@ -84,6 +82,9 @@
     padding: 0;
     box-sizing: border-box;
   }
+  body{
+    background-color: gainsboro;
+  }
   .todo-app{
     display: flex;
     flex-direction: column;
@@ -96,55 +97,6 @@
     margin-bottom: 10px;
   }
 
-  /* Adding todo item component */
-
-  .add-todo-item {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .add-item{
-    background-color:green;
-    color: white;
-    cursor: pointer;
-  }
-
-  .add-todo-item input, .add-todo-item .add-item {
-    padding: 5px 10px;
-    border: 2px solid green;
-    margin-right: 5px;
-
-  }
-
-
-  /* To do list component */
-
-  .to-do-list{
-    margin-top: 20px;
-  }
-
-  .to-do-list .to-do-item {
-    margin: 5px;
-    border: 2px solid green;
-    padding: 5px 25px;
-    max-width: 500px;
-    min-width: 260px;
-  }
-  .todo-time {
-    text-align: right;
-    padding: 0 5px 10px 0;
-    font-size: 13px;
-    font-style: italic;
-  }
-  .to-do-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px 10px 10px;
-  }
-  .item-body {
-    padding-right: 10px;
-  }
 
 
   /* buttons */
@@ -156,13 +108,6 @@
     border: none;
     cursor: pointer;
     margin: 5px;
-  }
-  .edit {
-    background-color: lightseagreen;
-  }
-
-  .remove {
-    background-color: red;
   }
 
 
