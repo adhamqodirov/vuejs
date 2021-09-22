@@ -33,6 +33,9 @@
             }
         },
         methods: {
+            editTodo (id){
+                this.$emit("onEditTodo",id);
+            },
             removeTodo(id){
                 this.$emit("removeTodo", id);
             }

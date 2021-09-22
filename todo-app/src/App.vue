@@ -1,5 +1,9 @@
 <template>
-  <div class="todo-app " :class="{ 'modal-body': openModal}">
+  <div id="nav">
+    <router-link to="/"><a href="/">Home</a> </router-link> |
+    <router-link to="/about"> <a href="/about">About</a> </router-link>
+  </div>
+ <div class="todo-app " :class="{ 'modal-body': openModal}">
     <h2>{{message}}</h2>
 
     <add-item @newTodo="addTodo($event)"/>
@@ -22,7 +26,36 @@
 
 
   </div>
+
+
+
+    <router-view></router-view>
+
 </template>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
+
 
 <script>
   import AddItem from './components/addItem.vue';
@@ -52,7 +85,6 @@
                 var day = date.getDate();
                 var year = date.getFullYear();
                 var month = date.getMonth();
-
                 const newItem = {
                     id: Date.now(),
                     body: value,
@@ -91,17 +123,12 @@
     padding: 100px;
     align-items: center;
   }
-
   .todo-app h2 {
     text-align: center;
     margin-bottom: 10px;
   }
-
-
-
   /* buttons */
   .btn  {
-
     font-size: 11px;
     padding: 5px 8px;
     color: white;
@@ -109,9 +136,6 @@
     cursor: pointer;
     margin: 5px;
   }
-
-
-
   /* modal form  */
   .modal-close {
     display: none;
@@ -119,14 +143,11 @@
   .vue-todo-modal{
     position: absolute;
     background-color: white;
-
   }
-
   .modal-body {
     background: rgba(0, 0, 0, 0.5);
     visibility: none;
   }
-
   .custom-modal{
     display: flex;
     flex-direction: column;
@@ -134,7 +155,6 @@
     border: 2px solid gray;
     padding-top: 30px;
   }
-
   .custom-modal h3 {
     font-weight:  500;
   }
@@ -144,12 +164,10 @@
     margin-right: 5px;
     margin-top: 10px;
   }
-
   .custom-modal .edit-form {
     background-color: blue;
     color: white;
     padding: 10px;
     margin-top: 20px;
   }
-
 </style>
