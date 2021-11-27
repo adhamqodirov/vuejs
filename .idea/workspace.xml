@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6a49a24-4475-4368-9eaf-54159e75fb69" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/learning/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learning/src/components/About.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learning/src/components/About.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learning/src/components/About.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learning/src/components/PostForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learning/src/components/PostItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learning/src/components/PostList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app/src/pages/Todo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app/src/pages/Todo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learning/src/App.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -123,7 +121,7 @@
       <updated>1631804509204</updated>
       <workItem from="1631804511494" duration="6995000" />
       <workItem from="1636031867083" duration="537000" />
-      <workItem from="1637824932770" duration="5473000" />
+      <workItem from="1637824932770" duration="10787000" />
     </task>
     <servers />
   </component>

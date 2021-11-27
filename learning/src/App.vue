@@ -1,29 +1,27 @@
 <template>
   <div class="app">
-    <form>
-      <h4>Create Post</h4>
-      <input class="input" type="text" placeholder="Name">
-      <input class="input" type="text" placeholder="Description">
-      <button class="btn">Add Post</button>
-    </form>
-    <About></About>
-    <div class="post" v-for="post in posts">
-      <div><strong>Name:</strong> {{ post.title }}</div>
-      <div><strong>Description:</strong> {{ post.body }}</div>
-    </div>
+  <post-form  @createPostForm="createPost($event)"></post-form>
+  <post-list :posts="posts"></post-list>
+
   </div>
 </template>
 
 <script>
 import About from './components/About'
+import PostForm from '@/components/PostForm'
+import PostList from '@/components/PostList'
 export default {
   components: {
-    About
+    About,
+    PostForm,
+    PostList
   },
   data () {
     return {
       likes: 2,
       dislikes: 0,
+      title: '',
+      body: '',
       posts: [
         { id: 1, title: 'Javascript', body: 'Javascript is universal programming language' },
         { id: 2, title: 'Python', body: 'Python is interpretation programming language' },
@@ -38,6 +36,16 @@ export default {
     addDisLike () {
       this.dislikes++
     },
+    inputTitle(event){
+      this.title =  event.target.value;
+    },
+    createPost(newPost){
+      console.log(newPost);
+      this.posts.push(newPost);
+    }
+  },
+  mounted () {
+    console.log(this.body)
   }
 }
 </script>
@@ -53,30 +61,4 @@ export default {
   box-sizing: border-box;
 }
 
-.post {
-  padding: 15px;
-  border: 2px solid teal;
-  margin-top: 15px;
-}
-
-.input {
-  width: 100%;
-  border: 1px solid teal;
-  padding: 10px 15px;
-  margin-top: 15px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.btn {
-  align-self: flex-end;
-  margin-top: 15px;
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-}
 </style>
