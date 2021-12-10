@@ -3,11 +3,15 @@
     <h4>Create Post</h4>
     <input class="input" type="text" v-model="post.title" placeholder="Name">
     <input class="input" type="text" v-bind:value="post.body" @input="post.body = $event.target.value" placeholder="Description">
-    <button class="btn" @click="createPost">Add Post</button>
+    <my-button
+        class="btn-add"
+        @click="createPost"
+    >Add Post</my-button>
   </form>
 </template>
 
 <script>
+import MyButton from '@/components/UI/MyButton'
 export default {
   name: 'PostForm',
   data(){
@@ -17,6 +21,9 @@ export default {
         body: ''
       }
     }
+  },
+  components: {
+    MyButton
   },
   methods: {
     createPost(event) {
@@ -32,8 +39,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.btn-add{
+  margin-top:15px;
+  align-self: flex-end;
+}
 .input {
   width: 100%;
   border: 1px solid teal;
@@ -46,12 +56,4 @@ form {
   flex-direction: column;
 }
 
-.btn {
-  align-self: flex-end;
-  margin-top: 15px;
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-}
 </style>

@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6a49a24-4475-4368-9eaf-54159e75fb69" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/learning/src/components/PostForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learning/src/components/PostItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learning/src/components/PostList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learning/src/components/UI/MyButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learning/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learning/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning/src/components/PostForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learning/src/components/PostForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning/src/components/PostItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learning/src/components/PostItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning/src/components/PostList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learning/src/components/PostList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +121,10 @@
       <updated>1631804509204</updated>
       <workItem from="1631804511494" duration="6995000" />
       <workItem from="1636031867083" duration="537000" />
-      <workItem from="1637824932770" duration="10787000" />
+      <workItem from="1637824932770" duration="15093000" />
+      <workItem from="1639020030705" duration="108000" />
+      <workItem from="1639020166109" duration="597000" />
+      <workItem from="1639109127228" duration="2739000" />
     </task>
     <servers />
   </component>
@@ -165,6 +168,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

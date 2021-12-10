@@ -1,5 +1,11 @@
 <template>
-  <post-item v-for="item in posts" :post="item"></post-item>
+  <div>
+    <h3>List of Posts</h3>
+    <post-item
+        v-for="item in posts"
+        :post="item"
+    />
+  </div>
 </template>
 
 <script>
